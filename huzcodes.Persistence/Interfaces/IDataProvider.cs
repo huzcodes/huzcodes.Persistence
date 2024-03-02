@@ -19,8 +19,8 @@ namespace huzcodes.Persistence.Interfaces
         /// <param name="storageProvider">the provider that you are using Sql or Oracle passing it using this enum: DataStorageProvider by default it is SQL</param>
         /// <returns>ValueTask IEnumerable of type generic T</returns>
         ValueTask<IEnumerable<TResult>> LoadDataAsync<TResult, UParameters>(string storedProcedureName,
-                                                                            UParameters storedProcedureParameters,
                                                                             string appSettingsConnectionStringKey,
+                                                                            UParameters storedProcedureParameters = default!,
                                                                             int storageProvider = DataStorageProvider.Sql);
 
         /// <summary>
@@ -38,8 +38,8 @@ namespace huzcodes.Persistence.Interfaces
         /// <param name="storageProvider">the provider that you are using Sql or Oracle passing it using this enum: DataStorageProvider by default it is SQL</param>
         /// <returns>IEnumerable of type generic T</returns>
         IEnumerable<TResult> LoadData<TResult, UParameters>(string storedProcedureName,
-                                                            UParameters storedProcedureParameters,
                                                             string appSettingsConnectionStringKey,
+                                                            UParameters storedProcedureParameters = default!,
                                                             int storageProvider = DataStorageProvider.Sql);
 
         /// <summary>
