@@ -9,8 +9,8 @@ namespace huzcodes.Persistence.Implementations
     public partial class DataProvider
     {
         public async ValueTask<IEnumerable<TResult>> LoadDataAsync<TResult, UParameters>(string storedProcedureName,
-                                                                                         UParameters storedProcedureParameters,
                                                                                          string appSettingsConnectionStringKey,
+                                                                                         UParameters storedProcedureParameters = default!,
                                                                                          int storageProvider = DataStorageProvider.Sql)
         {
             try
@@ -43,8 +43,8 @@ namespace huzcodes.Persistence.Implementations
 
 
         public IEnumerable<TResult> LoadData<TResult, UParameters>(string storedProcedureName,
-                                                                   UParameters storedProcedureParameters,
                                                                    string appSettingsConnectionStringKey,
+                                                                   UParameters storedProcedureParameters = default!,
                                                                    int storageProvider = DataStorageProvider.Sql)
         {
             try
