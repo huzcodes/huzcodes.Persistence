@@ -25,6 +25,13 @@ namespace huzcodes.Persistence.API.Controller.ReadAsync
             return Ok(oData);
         }
 
+        [HttpGet("/iRepositorySqlAsync")]
+        public async Task<ActionResult<IEnumerable<DataModel>>> GetIRepositorySqlData()
+        {
+            var oData = await _repository.ListAsync();
+            return Ok(oData);
+        }
+
         [HttpGet("/sqlByIdAsync")]
         public async Task<ActionResult<DataModel>> GetSqlDataById(int id)
         {
