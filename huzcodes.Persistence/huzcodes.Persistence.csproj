@@ -7,25 +7,30 @@
     <Title>huzcodes.Persistence</Title>
     <Authors>Ahmed Hussain (huzcodes)</Authors>
     <Company>huzcodes</Company>
-    <Description>huzcodes.Persistence is a C# .NET 8 package that simplifies data persistence operations for SQL and Oracle databases. It provides functions for reading and inserting data, with support for both synchronous and asynchronous operations. The package includes utilities for working with stored procedures, managing connection strings, and handling transactions.</Description>
+    <Description>huzcodes.Persistence is a C# .NET 8 package that simplifies data persistence operations for SQL and Oracle databases. It provides functions for reading and inserting data, with support for both synchronous and asynchronous operations. The package includes utilities for working with stored procedures, Repository pattern, managing connection strings, and handling transactions.</Description>
     <Copyright>huzcodes</Copyright>
     <PackageProjectUrl>https://github.com/huzcodes/huzcodes.Persistence</PackageProjectUrl>
-    <PackageIcon>Huzcodes Logo.jpg</PackageIcon>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageIcon>logo-nf-s.png</PackageIcon>
+    <PackageReadmeFile>Huzcodes.Persistence.README.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/huzcodes/huzcodes.Persistence</RepositoryUrl>
-    <PackageTags>dapper, dapper.oracle, persistence, sql, oracle, database, unit-of-work</PackageTags>
-    <PackageReleaseNotes>huzcodes.Persistence is a C# .NET 8 package that simplifies data persistence operations for SQL and Oracle databases. It provides functions for reading and inserting data, with support for both synchronous and asynchronous operations. </PackageReleaseNotes>
+    <PackageTags>dapper, dapper.oracle, persistence, sql, oracle, database, unit-of-work, repository, specifications</PackageTags>
+    <PackageReleaseNotes>huzcodes.Persistence is a C# .NET 8 package that simplifies data persistence operations for SQL and Oracle databases. It provides functions for reading and inserting data, with support for both synchronous and asynchronous operations. 
+
+What's new?
+------------
+In this release the package will be supporting repository pattern for CRUD, together with Specifications.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.2.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\Downloads\README.md">
+    <None Include="..\..\..\..\Downloads\Huzcodes.Persistence.README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="H:\filming\Logo\logo sizes\Huzcodes Logo.jpg">
+    <None Include="H:\filming\Logo\logo sizes\.NET Core Clean Architecture\logo-nf-s.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
