@@ -12,6 +12,7 @@ dotnet add package huzcodes.Persistence --version 1.0.0
 ### Usage
 
 To use **huzcodes.Persistence**, first inject the '**IDataProvider**' interface into your class constructor. Then, you can use the provided functions to interact with your database.
+And to use **huzcodes.Persistence** Repository, first inject the '**IRepository<your entity model>**' interface into your class constructor. Then, you can use the provided functions to interact with your database.
 
 
 #### Registering the Package
@@ -20,6 +21,13 @@ To use **huzcodes.Persistence**, first inject the '**IDataProvider**' interface 
 
 // Add the registration of persistence from inside huzcodes persistence plugin
 builder.Services.AddPersistenceServices();
+
+// Add the registration of persistence using repository inside huzcodes persistence plugin.
+// Before this step you need to create a class that inject your AppDbContext and inherits from 'HuzcodesRepository',
+// then register it. For example let's call this class 'DbRepository'.
+builder.Services.AddScoped(typeof(IRepository<>), typeof(DbRepository<>));
+builder.Services.AddScoped(typeof(IReadRepository<>), typeof(DbRepository<>));
+
 ```
 #### Reading Data Examples
 SQL Reading Async Without Parameters
@@ -29,6 +37,14 @@ SQL Reading Async Without Parameters
 var data = await _dataProvider.LoadDataAsync<DataModel, dynamic>(readProcedureName, connectionStringKey, storageProvider: DataStorageProvider.Sql);
 return Ok(data);
 ```
+SQL Reading Async Without Parameters Using Repository
+
+```csharp
+
+var oData = await _repository.ListAsync();
+return Ok(oData);
+```
+
 SQL Reading Async With Parameters
 
 ```csharp
@@ -37,6 +53,24 @@ var parameter = new { Id = id };
 var data = await _dataProvider.LoadDataAsync<DataModel, dynamic>(readProcedureName, connectionStringKey, parameter);
 return Ok(data.FirstOrDefault());
 ```
+
+SQL Reading Async With Parameters Using Repository
+
+```csharp
+
+var oResult = await _repository.GetByIdAsync(id);
+return Ok(oResult);
+```
+
+SQL Reading Async With Parameters Using Repository and Specifications
+
+```csharp
+
+var readByIdSpecification = new ReadByIdSpecifications(id);
+var oResult = await _repository.FirstOrDefaultAsync(readByIdSpecification);
+return Ok(oResult);
+```
+
 Oracle Reading Async Without Parameters
 
 ```csharp
@@ -72,6 +106,23 @@ var parameter = new
 await _dataProvider.ExecuteDataAsync(createProcedureName, parameter, connectionStringKey);
 return Ok();
 ```
+
+SQL Inserting Async Using Repository
+
+```csharp
+
+var oData = new DataModel()
+{
+    Id = dataModel.Id,
+    Date = dataModel.Date,
+    PriceWithoutTax = dataModel.PriceWithoutTax,
+    ProductName = dataModel.ProductName
+};
+
+await _repository.AddAsync(oData);
+return Ok();
+```
+
 Oracle Inserting Async
 
 ```csharp
