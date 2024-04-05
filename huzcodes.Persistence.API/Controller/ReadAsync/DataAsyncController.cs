@@ -1,5 +1,7 @@
 using Dapper.Oracle;
+using huzcodes.Persistence.API.Controller.ReadAsync.Specifications;
 using huzcodes.Persistence.Interfaces;
+using huzcodes.Persistence.Interfaces.Repositories;
 using huzcodes.Persistence.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
@@ -8,9 +10,10 @@ namespace huzcodes.Persistence.API.Controller.ReadAsync
 {
     [ApiController]
     [Route("[controller]")]
-    public class DataAsyncController(IDataProvider dataProvider) : ControllerBase
+    public class CreateDataSyncController(IDataProvider dataProvider, IRepository<DataModel> repository) : ControllerBase
     {
         private readonly IDataProvider _dataProvider = dataProvider;
+        private readonly IRepository<DataModel> _repository = repository;
         const string connectionStringKey = "DefaultConnectionString";
         const string readProcedureName = "Sp_ReadData";
 
@@ -33,6 +36,21 @@ namespace huzcodes.Persistence.API.Controller.ReadAsync
                                                                               connectionStringKey,
                                                                               oParameter);
             return Ok(oData.FirstOrDefault());
+        }
+
+        [HttpGet("/iRepositorySpecificationsSqlByIdAsync")]
+        public async Task<ActionResult<DataModel>> GetIRepositorySpecificationsSqlDataById(int id)
+        {
+            var readByIdSpecification = new ReadByIdSpecifications(id);
+            var oResult = await _repository.FirstOrDefaultAsync(readByIdSpecification);
+            return Ok(oResult);
+        }
+
+        [HttpGet("/iRepositorySqlByIdAsync")]
+        public async Task<ActionResult<DataModel>> GetIRepositorySqlDataById(int id)
+        {
+            var oResult = await _repository.GetByIdAsync(id);
+            return Ok(oResult);
         }
 
         [HttpGet("/oracleAsync")]

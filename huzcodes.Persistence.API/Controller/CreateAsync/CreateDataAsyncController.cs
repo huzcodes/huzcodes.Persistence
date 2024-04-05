@@ -1,5 +1,6 @@
 using Dapper.Oracle;
 using huzcodes.Persistence.Interfaces;
+using huzcodes.Persistence.Interfaces.Repositories;
 using huzcodes.Persistence.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
@@ -8,9 +9,10 @@ namespace huzcodes.Persistence.API.Controller.CreateAsync
 {
     [ApiController]
     [Route("[controller]")]
-    public class CreateDataAsyncController(IDataProvider dataProvider) : ControllerBase
+    public class CreateDataSyncController(IDataProvider dataProvider, IRepository<DataModel> repository) : ControllerBase
     {
         private readonly IDataProvider _dataProvider = dataProvider;
+        private readonly IRepository<DataModel> _repository = repository;
         const string connectionStringKey = "DefaultConnectionString";
         const string createProcedureName = "Sp_CreateData";
 
@@ -28,6 +30,13 @@ namespace huzcodes.Persistence.API.Controller.CreateAsync
             await _dataProvider.ExecuteDataAsync(createProcedureName,
                                                  oParameter,
                                                  connectionStringKey);
+            return Ok();
+        }
+
+        [HttpPost("/iRepositorySqlCreateSync")]
+        public async Task<ActionResult> IRepositoryCreateSqlData([FromBody] DataModel dataModel)
+        {
+            await _repository.AddAsync(dataModel);
             return Ok();
         }
 

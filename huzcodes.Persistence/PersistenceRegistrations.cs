@@ -1,7 +1,5 @@
 ﻿using huzcodes.Persistence.Implementations;
-using huzcodes.Persistence.Implementations.EfRepository;
 using huzcodes.Persistence.Interfaces;
-using huzcodes.Persistence.Interfaces.Repositories;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace huzcodes.Persistence
@@ -22,26 +20,14 @@ namespace huzcodes.Persistence
             switch (serviceLifetime)
             {
                 case (int)ServiceLifetime.Transient:
-                    {
-                        services.AddTransient<IDataProvider, DataProvider>();
-                        services.AddTransient(typeof(IRepository<>), typeof(HuzcodesRepository<>));
-                        services.AddTransient(typeof(IReadRepository<>), typeof(HuzcodesRepository<>));
-                        break;
-                    }
+                    services.AddTransient<IDataProvider, DataProvider>();
+                    break;
                 case (int)ServiceLifetime.Scoped:
-                    {
-                        services.AddScoped<IDataProvider, DataProvider>();
-                        services.AddScoped(typeof(IRepository<>), typeof(HuzcodesRepository<>));
-                        services.AddScoped(typeof(IReadRepository<>), typeof(HuzcodesRepository<>));
-                        break;
-                    }
+                    services.AddScoped<IDataProvider, DataProvider>();
+                    break;
                 case (int)ServiceLifetime.Singleton:
-                    {
-                        services.AddSingleton<IDataProvider, DataProvider>();
-                        services.AddSingleton(typeof(IRepository<>), typeof(HuzcodesRepository<>));
-                        services.AddSingleton(typeof(IReadRepository<>), typeof(HuzcodesRepository<>));
-                        break;
-                    }
+                    services.AddSingleton<IDataProvider, DataProvider>();
+                    break;
             }
         }
     }
