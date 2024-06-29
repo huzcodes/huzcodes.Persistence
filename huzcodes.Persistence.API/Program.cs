@@ -10,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // adding the registration of persistence from inside huzcodes persistence plugin.
-builder.Services.AddPersistenceServices();
+builder.Services.AddDapperPersistence();
 
 var app = builder.Build();
 
