@@ -41,6 +41,8 @@ In this release the package will be supporting repository pattern for CRUD, toge
     <PackageReference Include="Dapper" Version="2.1.28" />
     <PackageReference Include="Dapper.Oracle" Version="2.0.3" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.27.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="8.21.121" />
   </ItemGroup>
 
