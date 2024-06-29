@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 
 namespace huzcodes.Persistence.Interfaces.Mongo
 {
-    public interface IMongoProviderEntity
+    public abstract class IMongoProviderEntity
     {
         /// <summary>
         /// Id property, object type id for mongo identifier BsonType
@@ -12,6 +12,6 @@ namespace huzcodes.Persistence.Interfaces.Mongo
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
         [JsonProperty("id")]
-        public string? Id { get; set; }
+        public string Id {  get; set; } = string.Empty;
     }
 }
