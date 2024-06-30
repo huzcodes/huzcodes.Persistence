@@ -14,7 +14,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PluginDocs", "PluginDocs", "{2A57E74C-4F69-4D23-94C4-20C119480822}"
 	ProjectSection(SolutionItems) = preProject
 		PluginDocs\huzcodes-persistence-logo.png = PluginDocs\huzcodes-persistence-logo.png
-		PluginDocs\ReadMe.txt = PluginDocs\ReadMe.txt
+		ReadMe.md = ReadMe.md
 	EndProjectSection
 EndProject
 Global
