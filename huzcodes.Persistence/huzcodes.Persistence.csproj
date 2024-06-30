@@ -11,7 +11,7 @@
     <Copyright>huzcodes</Copyright>
     <PackageProjectUrl>https://github.com/huzcodes/huzcodes.Persistence</PackageProjectUrl>
     <PackageIcon>huzcodes-persistence-logo.png</PackageIcon>
-    <PackageReadmeFile>ReadMe.txt</PackageReadmeFile>
+    <PackageReadmeFile>ReadMe.md</PackageReadmeFile>
     <RepositoryUrl>https://github.com/huzcodes/huzcodes.Persistence</RepositoryUrl>
     <PackageTags>dapper, dapper.oracle, persistence, sql, oracle, database, unit-of-work, repository, specifications</PackageTags>
     <PackageReleaseNotes>huzcodes.Persistence is a C# .NET 8 package that simplifies data persistence operations for SQL, Oracle, and MongoDB databases. It provides functions for reading and inserting data, with support for both synchronous and asynchronous operations. 
@@ -26,10 +26,6 @@ In this release the package will be supporting MongoDB service provider for CRUD
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\PluginDocs\ReadMe.txt">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
     <None Include="..\PluginDocs\huzcodes-persistence-logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
@@ -44,6 +40,12 @@ In this release the package will be supporting MongoDB service provider for CRUD
     <PackageReference Include="MongoDB.Driver" Version="2.27.0" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Oracle.EntityFrameworkCore" Version="8.21.121" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>
