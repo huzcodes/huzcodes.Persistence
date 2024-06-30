@@ -14,11 +14,11 @@
     <PackageReadmeFile>ReadMe.txt</PackageReadmeFile>
     <RepositoryUrl>https://github.com/huzcodes/huzcodes.Persistence</RepositoryUrl>
     <PackageTags>dapper, dapper.oracle, persistence, sql, oracle, database, unit-of-work, repository, specifications</PackageTags>
-    <PackageReleaseNotes>huzcodes.Persistence is a C# .NET 8 package that simplifies data persistence operations for SQL and Oracle databases. It provides functions for reading and inserting data, with support for both synchronous and asynchronous operations. 
+    <PackageReleaseNotes>huzcodes.Persistence is a C# .NET 8 package that simplifies data persistence operations for SQL, Oracle, and MongoDB databases. It provides functions for reading and inserting data, with support for both synchronous and asynchronous operations. 
 
 What's new?
 ------------
-In this release the package will be supporting repository pattern for CRUD, together with Specifications.</PackageReleaseNotes>
+In this release the package will be supporting MongoDB service provider for CRUD.</PackageReleaseNotes>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Version>1.3.0</Version>
   </PropertyGroup>
