@@ -10,8 +10,8 @@
     <Description>huzcodes.Persistence is a C# .NET 8 package that simplifies data persistence operations for SQL, Oracle, MongoDB databases. It provides functions for reading and inserting data, with support for both synchronous and asynchronous operations. The package includes utilities for working with stored procedures, Repository pattern, managing connection strings, and handling transactions.</Description>
     <Copyright>huzcodes</Copyright>
     <PackageProjectUrl>https://github.com/huzcodes/huzcodes.Persistence</PackageProjectUrl>
-    <PackageIcon>logo-nf-s.png</PackageIcon>
-    <PackageReadmeFile>Huzcodes.Persistence.README.md</PackageReadmeFile>
+    <PackageIcon>huzcodes-persistence-logo.png</PackageIcon>
+    <PackageReadmeFile>ReadMe.txt</PackageReadmeFile>
     <RepositoryUrl>https://github.com/huzcodes/huzcodes.Persistence</RepositoryUrl>
     <PackageTags>dapper, dapper.oracle, persistence, sql, oracle, database, unit-of-work, repository, specifications</PackageTags>
     <PackageReleaseNotes>huzcodes.Persistence is a C# .NET 8 package that simplifies data persistence operations for SQL and Oracle databases. It provides functions for reading and inserting data, with support for both synchronous and asynchronous operations. 
@@ -26,11 +26,11 @@ In this release the package will be supporting repository pattern for CRUD, toge
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\Downloads\Huzcodes.Persistence.README.md">
+    <None Include="..\PluginDocs\ReadMe.txt">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="H:\filming\Logo\logo sizes\.NET Core Clean Architecture\logo-nf-s.png">
+    <None Include="..\PluginDocs\huzcodes-persistence-logo.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
