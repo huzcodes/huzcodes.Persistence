@@ -11,10 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TestPluginAPI", "TestPlugin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "huzcodes.Persistence.API", "huzcodes.Persistence.API\huzcodes.Persistence.API.csproj", "{D17E5E5D-FFE0-4E41-9C61-E5D4E3FDCF79}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PluginDocs", "PluginDocs", "{20BEA36C-C358-47B5-A95F-5EEEE673E850}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PluginDocs", "PluginDocs", "{2A57E74C-4F69-4D23-94C4-20C119480822}"
 	ProjectSection(SolutionItems) = preProject
-		ReadMe.txt = ReadMe.txt
-		H:\filming\Logo\new logo\sizes\huzcodes-persistence-logo.png = H:\filming\Logo\new logo\sizes\huzcodes-persistence-logo.png
+		PluginDocs\huzcodes-persistence-logo.png = PluginDocs\huzcodes-persistence-logo.png
+		PluginDocs\ReadMe.txt = PluginDocs\ReadMe.txt
 	EndProjectSection
 EndProject
 Global
