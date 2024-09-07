@@ -1,4 +1,5 @@
 ﻿using huzcodes.Persistence.Implementations;
+using huzcodes.Persistence.Implementations.Mongo;
 using huzcodes.Persistence.Interfaces;
 using huzcodes.Persistence.Interfaces.Mongo;
 using Microsoft.Extensions.DependencyInjection;
@@ -46,13 +47,13 @@ namespace huzcodes.Persistence
             switch (serviceLifetime)
             {
                 case (int)ServiceLifetime.Transient:
-                    services.AddTransient(typeof(IMongoProvider<>), typeof(IMongoProvider<>));
+                    services.AddTransient(typeof(IMongoProvider<>), typeof(MongoProvider<>));
                     break;
                 case (int)ServiceLifetime.Scoped:
-                    services.AddScoped(typeof(IMongoProvider<>), typeof(IMongoProvider<>));
+                    services.AddScoped(typeof(IMongoProvider<>), typeof(MongoProvider<>));
                     break;
                 case (int)ServiceLifetime.Singleton:
-                    services.AddSingleton(typeof(IMongoProvider<>), typeof(IMongoProvider<>));
+                    services.AddSingleton(typeof(IMongoProvider<>), typeof(MongoProvider<>));
                     break;
             }
         }
